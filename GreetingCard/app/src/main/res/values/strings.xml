@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Greeting Card</string>
+    <string name="happy_women_s_day_text">Happy Women\'s day Seethu!</string>
+    <string name="signature_text">From Sathish</string>
 </resources>
