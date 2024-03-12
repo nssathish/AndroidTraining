@@ -4,8 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -41,9 +44,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TaskManager(modifier: Modifier = Modifier) {
-    Box(
-        modifier = Modifier,
-        contentAlignment = Alignment.Center
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = painterResource(
@@ -57,22 +63,16 @@ fun TaskManager(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold,
             modifier = modifier
                 .padding(
-                    top = 280.dp,
+                    top = 24.dp,
                     bottom = 8.dp
                 )
         )
         Text(
             text = stringResource(R.string.nice_work),
-            fontSize = 16.sp,
-            modifier = modifier
-                .padding(
-                    top = 324.dp,
-                    bottom = 8.dp
-                )
+            fontSize = 16.sp
         )
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
