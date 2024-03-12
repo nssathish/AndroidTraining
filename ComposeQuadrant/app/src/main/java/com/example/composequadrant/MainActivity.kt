@@ -19,9 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.example.composequadrant.ui.theme.ComposeQuadrantTheme
 
@@ -60,12 +58,11 @@ fun Quadrant() {
     val text4b = stringResource(id = R.string.composable_article_4b)
     Row (
         Modifier
-            .padding(16.dp)
             .fillMaxHeight()
     ) {
         Box(
             Modifier
-                .size(180.dp, 380.dp)
+                .size(200.dp, 380.dp)
                 .align(Alignment.Top)
                 .background(Color(0xFFEADDFF)),
             contentAlignment = Alignment.Center
@@ -73,16 +70,18 @@ fun Quadrant() {
             Text(
                 text = text1a,
                 modifier = Modifier
-                    .padding(bottom = 112.dp),
+                    .padding(bottom = 168.dp),
                 fontWeight = FontWeight.Bold,
             )
             Text(
-                text = text1b
+                text = text1b,
+                modifier = Modifier
+                    .padding(start = 12.dp, end = 12.dp)
             )
         }
         Box(
             Modifier
-                .size(180.dp, 380.dp)
+                .size(200.dp, 380.dp)
                 .align(Alignment.Top)
                 .background(Color(0xFFD0BCFF)),
             contentAlignment = Alignment.Center
@@ -90,22 +89,23 @@ fun Quadrant() {
             Text(
                 text = text2a,
                 modifier = Modifier
-                    .padding(bottom = 112.dp),
+                    .padding(bottom = 168.dp),
                 fontWeight = FontWeight.Bold,
             )
             Text(
-                text = text2b
+                text = text2b,
+                modifier = Modifier
+                    .padding(start = 12.dp, end = 12.dp)
             )
         }
     }
     Row(
         Modifier
-            .padding(16.dp)
             .fillMaxHeight()
     ) {
         Box(
             Modifier
-                .size(180.dp, 380.dp)
+                .size(200.dp, 380.dp)
                 .align(Alignment.Bottom)
                 .background(Color(0xFFB69DF8)),
             contentAlignment = Alignment.Center
@@ -113,16 +113,18 @@ fun Quadrant() {
             Text(
                 text = text3a,
                 modifier = Modifier
-                    .padding(bottom = 112.dp),
+                    .padding(bottom = 168.dp),
                 fontWeight = FontWeight.Bold,
             )
             Text(
-                text = text3b
+                text = text3b,
+                modifier = Modifier
+                        .padding(start = 12.dp, end = 12.dp)
             )
         }
         Box(
             Modifier
-                .size(180.dp, 380.dp)
+                .size(200.dp, 380.dp)
                 .align(Alignment.Bottom)
                 .background(Color(0xFFF6EDFF)),
             contentAlignment = Alignment.Center
@@ -130,11 +132,13 @@ fun Quadrant() {
             Text(
                 text = text4a,
                 modifier = Modifier
-                    .padding(bottom = 112.dp),
+                    .padding(bottom = 168.dp),
                 fontWeight = FontWeight.Bold,
             )
             Text(
-                text = text4b
+                text = text4b,
+                modifier = Modifier
+                    .padding(start = 12.dp, end = 12.dp)
             )
         }
     }
