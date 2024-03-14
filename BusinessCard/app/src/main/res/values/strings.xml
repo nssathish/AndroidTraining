@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BusinessCard</string>
+    <string name="user_designation1">Chief Executive Officer</string>
+    <string name="user_name1">Suchithra Dhanaraj</string>
+    <string name="user_designation2">Software Architect</string>
+    <string name="user_name2">Sathish Kumar</string>
+    <string name="contact1">+1-(289) 183 3376</string>
+    <string name="email1">sathish@company.com</string>
+    <string name="social_media_handle1">sathishkumar</string>
+    <string name="contact2">+1-(189) 038 3766</string>
+    <string name="email2">sathish@company.com</string>
+    <string name="social_media_handle2">sathishkumar</string>
+</resources>
