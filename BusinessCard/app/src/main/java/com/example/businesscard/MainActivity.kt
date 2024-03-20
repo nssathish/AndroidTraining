@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -45,16 +46,16 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCard() {
-    Column (
+    Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFA7FFEB)),
+            .background(Color(0xFFA8E9CB)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         //1. Background
         Column(
-            modifier = Modifier,
+            modifier = Modifier.weight(8f),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -66,61 +67,35 @@ fun BusinessCard() {
             Designation()
         }
         Column(
-            modifier = Modifier,
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            modifier = Modifier.weight(2f),
+            verticalArrangement = Arrangement.Top
         ) {
             //5. mobile number
-            Contact()
+            ComposeDemographics(iconId = R.drawable.call_icon, contentId = R.string.contact1)
             //6. Social Media Handler
-            SocialMediaHandler()
+            ComposeDemographics(
+                iconId = R.drawable.share_icon,
+                contentId = R.string.social_media_handle1
+            )
             //7. Email
-            Email()
+            ComposeDemographics(iconId = R.drawable.mail_icon, contentId = R.string.email1)
         }
     }
 }
 
 @Composable
-fun Email() {
+fun ComposeDemographics(iconId: Int, contentId: Int) {
     Row {
         Image(
-            painter = painterResource(id = R.drawable.mail_icon)
-            , contentDescription = null
-            , modifier = Modifier.size(28.dp)
+            painter = painterResource(id = iconId), contentDescription = null, modifier = Modifier
+                .padding(end = 8.dp, bottom = 8.dp)
+                .size(28.dp)
+                .weight(0.4f), Alignment.CenterEnd
         )
         Text(
-            text = stringResource(id = R.string.email2)
-            , modifier = Modifier.padding(start = 8.dp)
-        )
-    }
-}
-
-@Composable
-fun SocialMediaHandler() {
-    Row {
-        Image(
-            painter = painterResource(id = R.drawable.share_icon)
-            , contentDescription = null
-            , modifier = Modifier.size(28.dp)
-        )
-        Text(
-            text = stringResource(id = R.string.social_media_handle2)
-            , modifier = Modifier.padding(start = 8.dp)
-        )
-    }
-}
-
-@Composable
-fun Contact() {
-    Row {
-        Image(
-            painter = painterResource(id = R.drawable.call_icon)
-            , contentDescription = null
-            , modifier = Modifier.size(28.dp)
-        )
-        Text(
-            text = stringResource(id = R.string.contact2)
-            , modifier = Modifier.padding(top = 4.dp, start = 8.dp)
+            text = stringResource(contentId), modifier = Modifier
+                .weight(1f)
+                .padding(start = 16.dp), fontSize = 20.sp
         )
     }
 }
@@ -128,28 +103,30 @@ fun Contact() {
 @Composable
 fun Designation() {
     Text(
-        text = stringResource(id = R.string.user_designation2)
-        , modifier = Modifier.padding(bottom = 32.dp)
+        text = stringResource(id = R.string.user_designation2),
+        modifier = Modifier.padding(bottom = 32.dp),
+        color = Color(0xFF008300),
+        fontWeight = FontWeight.Bold
     )
 }
 
 @Composable
 fun Name() {
     Text(
-        text = stringResource(id = R.string.user_name2)
-        , modifier = Modifier.padding(top = 8.dp)
-        , fontSize = 32.sp
-        , fontFamily = FontFamily.Serif
+        text = stringResource(id = R.string.user_name2),
+        modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
+        fontSize = 32.sp,
+        fontFamily = FontFamily.SansSerif
     )
 }
 
 @Composable
 fun Avatar() {
     Image(
-        painter = painterResource(id = R.drawable.android_logo)
-        , contentDescription = null
-        , alpha = 1F
-        , modifier = Modifier
+        painter = painterResource(id = R.drawable.android_logo),
+        contentDescription = null,
+        alpha = 1F,
+        modifier = Modifier
             .size(116.dp)
             .background(Color.Black)
     )
