@@ -103,7 +103,7 @@ fun Lemonade(modifier: Modifier = Modifier.wrapContentSize(Alignment.Center)) {
                     }
                     choiceDescription = labelOfChoice(choice)
                 },
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(48.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFFE6FFE6)
                 )
